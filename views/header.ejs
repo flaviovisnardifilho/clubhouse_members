@@ -1,0 +1,12 @@
+<!-- header.ejs -->
+
+<div class="header">
+  <h1><%= title %></h1>
+
+  <% if (locals.user) { %>
+  <h2><%= locals.user.name %></h2>
+  <a href="log-out">LogOut</a>
+  <% } else { %>
+  <a href="/log-in">LogIn</a>
+  <%}%>
+</div>

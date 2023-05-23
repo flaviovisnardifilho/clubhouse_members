@@ -1,0 +1,21 @@
+<div class="main posts">
+  <%- include('input-message'); -%>
+  <ul>
+    <% for (const [key, post] of Object.entries(post_list)) { %>
+    <li>
+      <%= post.author.name %> - <%= post.content %> <% if (locals.user) { %>
+      <%if (locals.user.isAdmin) { %>
+      <form class="delete-message-form" action="/messages/<%= post.id %>/delete" method="POST">
+        <input
+          type="hidden"
+          name="postId"
+          required="true"
+          value="<%=post.id%>"
+        />
+        <button type="submit">Delete</button>
+      </form>
+      <%}%> <%}%>
+    </li>
+    <%} %>
+  </ul>
+</div>

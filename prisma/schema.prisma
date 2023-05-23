@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mongodb"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma" // default for MongoDB
+}
+
+model Post {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  published DateTime @default(now()) // @db.Date
+  authorId  String   @db.ObjectId
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model User {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  name    String  @unique
+  posts   Post[]
+  isAdmin Boolean @default(false)
+  hash    String
+}
+

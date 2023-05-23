@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ClubHouse Board</title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <form action="/log-in" method="POST">
+    <label for="username">Username</label>
+    <input name="username" placeholder="username" type="text" />
+    
+    <label for="password">Password</label>
+    <input name="password" type="password" />
+    
+    <button>Sign Up</button>
+  </form>
+
+  <p>Dosen't have an account? <a href="/register">Create one here!</a></p>
+</body>
+</html>

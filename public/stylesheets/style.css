@@ -1,0 +1,71 @@
+body {
+  /* padding: 50px; */
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+
+  background-color: var(--color-background);
+
+  --color-background: rgb(142, 165, 42);
+  --color-main: rgb(241, 230, 230);
+
+  --header-height: 50px;
+  --footer-height: 50px;
+  --main-height: calc(100vh - (var(--header-height) + var(--footer-height)));
+}
+
+.container {
+  height: 100vh;
+}
+
+.header {
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  max-height: var(--header-height);
+  padding: 0.5em 2em 0.5em 1em;
+}
+
+.main {
+  background-color: var(--color-main);
+  max-height: var(--main-height);
+  overflow-y: scroll;
+}
+
+.footer {
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  bottom: 0rem;
+  min-height: var(--footer-height);
+  padding: 0.5em;
+}
+
+a {
+  color: #00b7ff;
+}
+
+input{
+  border-radius: 8px;
+}
+
+button {
+  border-radius: 8px;
+}
+
+.send-message-form {
+  margin: 1em;
+  width: 100%;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+ }
+
+.send-message-form input {
+  width: 80%;
+}
+
